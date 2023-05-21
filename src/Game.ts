@@ -1,5 +1,6 @@
 import HMACCalculator from "./HMACCalculator";
 import UIPrinter from "./UIPrinter";
+import checkHmac from "./checkHMAC";
 const prompt = require("prompt-sync")();
 
 class Game {
@@ -55,7 +56,7 @@ class Game {
     else if (move === this.computerMove) this.printer.printRoundResult(true, true);
     else this.printer.printRoundResult(true, false);
 
-    this.printer.printKey();
+    checkHmac(this.hmacCalculator, this.computerMove);
   }
 
   private generateWinLogicMap() {

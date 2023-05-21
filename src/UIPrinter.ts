@@ -21,11 +21,11 @@ class UIPrinter {
   printHMAC() {
     console.log("HMAC: ", this.hmacCalculator.hmac);
     console.log();
-    console.log();
   }
 
   printKey() {
     console.log("HMAC key: ", this.hmacCalculator.key);
+    console.log();
   }
 
   printMove(move: string) {
@@ -42,11 +42,10 @@ class UIPrinter {
     else console.log("You won!");
 
     console.log();
-    console.log();
-    console.log();
   }
 
   printTable(winLogicMap: Map<string, string[]>, moves: string[]) {
+    console.log();
     const longestStringLength = Math.max(...moves.map(str => str.length), 4);
     const tableWidth = (longestStringLength + 3) * (moves.length + 1) - 1;
     const hr = "|" + "-".repeat(tableWidth) + "|";
@@ -82,6 +81,8 @@ class UIPrinter {
       console.log("|");
     }
     console.log(hr);
+    console.log();
+
   }
 
 }
